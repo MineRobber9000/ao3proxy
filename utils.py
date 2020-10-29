@@ -18,7 +18,7 @@ def get(url,soup=False):
 
 def quote_tag(tag):
 	"""Quotes {tag} as a tag, suitable for insertion into the tag works URL."""
-	return quote(tag,"")
+	return quote(tag,"()").replace("%2F","*s*")
 
 import os
 def on_normal_port():
