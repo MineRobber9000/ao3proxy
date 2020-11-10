@@ -5,6 +5,8 @@ tags = [
 #	["THIS IS THE NAME THAT SHOWS UP","THIS IS THE TAG THAT ACTUALLY GETS SEARCHED"]
 	["Sonic", "Sonic the Hedgehog - All Media Types"],
 	["Infidget", "Avatar | Custom Hero (Sonic Forces)/Infinite (Sonic the Hedgehog)"],
+	["DreamNotFound (Dream X GeorgeNotFound)", "Clay | Dream/GeorgeNotFound (Video Blogging RPF)"],
+	["Among Us","Among Us (Video Game)"]
 ]
 
 tags = "\n".join(['<li><a href="list.cgi?{}">{}</a></li>'.format(urlencode(dict(tag=x[1])),x[0]) for x in tags])
