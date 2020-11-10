@@ -7,10 +7,14 @@ from requests.exceptions import HTTPError
 # Query string parser and url encoder
 from urllib.parse import parse_qs, quote, urlencode
 
+last_request_encoding=""
+
 def get(url,soup=False):
 	"""Get URL and return the result as a BeautifulSoup object if soup is True."""
+	global last_request_encoding
 	r = requests.get(url)
 	r.raise_for_status()
+	last_request_encoding=r.encoding
 	if soup:
 		return BeautifulSoup(r.text,"lxml")
 	else:
@@ -31,3 +35,5 @@ def on_normal_port():
 TAG_WORKS_URL = "https://archiveofourown.org/tags/{}/works"
 TAG_WORKS_PAGED_URL = "https://archiveofourown.org/tags/{}/works?page={}"
 WORK_DOWNLOAD_URL = "https://archiveofourown.org/downloads/{0}/{0}.{1}"
+USER_WORKS_URL = "https://archiveofourown.org/users/{}/works"
+USER_WORKS_PAGED_URL = "https://archiveofourown.org/users/{}/works?page={}"

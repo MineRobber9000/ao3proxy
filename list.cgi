@@ -42,7 +42,7 @@ except utils.HTTPError: # the request failed
 	sys.exit()
 
 # Print headers and top of page
-print("Content-Type: text/html")
+print("Content-Type: text/html; charset="+utils.last_request_encoding)
 print()
 print("""<!doctype html>
 <html>
