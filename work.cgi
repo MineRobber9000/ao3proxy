@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import utils, os, sys
+import utils, os, sys, time
 
 # start by parsing the query string
 qs = utils.parse_qs(os.environ["QUERY_STRING"])
@@ -35,7 +35,7 @@ if format not in FORMATS:
 	print("Usage: {}://{}{}{}?work={{work to get}}".format(os.environ["REQUEST_SCHEME"],os.environ["HTTP_HOST"],(":"+os.environ["SERVER_PORT"] if not utils.on_normal_port() else ""),os.environ["REQUEST_URI"]))
 	sys.exit(0)
 
-url = utils.WORK_DOWNLOAD_URL.format(id,format)
+url = utils.WORK_DOWNLOAD_URL.format(id,format,round(time.time()-0.5))
 
 req = utils.requests.get(url)
 if req.status_code!=200:

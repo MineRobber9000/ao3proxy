@@ -34,6 +34,6 @@ def on_normal_port():
 # Utility definitions
 TAG_WORKS_URL = "https://archiveofourown.org/tags/{}/works"
 TAG_WORKS_PAGED_URL = "https://archiveofourown.org/tags/{}/works?page={}"
-WORK_DOWNLOAD_URL = "https://archiveofourown.org/downloads/{0}/{0}.{1}"
+WORK_DOWNLOAD_URL = "https://archiveofourown.org/downloads/{0}/{0}.{1}?updated_at={2}"
 USER_WORKS_URL = "https://archiveofourown.org/users/{}/works"
 USER_WORKS_PAGED_URL = "https://archiveofourown.org/users/{}/works?page={}"
